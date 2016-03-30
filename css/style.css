@@ -1,0 +1,35 @@
+
+
+.wrapper, .table-container {
+	float: left;
+	margin-top: 50px;
+}
+
+.timer-container {
+	width: 410px;
+	font-family: 'Lucida Sans Unicode';
+}
+.timer-container {
+	font-size: 50px;
+	line-height: 50px;
+}
+.timer {
+	text-align: center;
+}
+.button-container {
+	width: 410px;
+	margin-top: 30px;
+}
+.btn {
+	width: 120px;
+	font-size: 30px;
+}
+.button {
+	display: inline-block;
+}
+.button-stop {
+	display: none;
+}
+.table {
+	width: 410px;
+}

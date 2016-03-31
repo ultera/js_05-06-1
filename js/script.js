@@ -9,7 +9,7 @@ var myTimer = document.querySelector('.timer');
 var myTable = document.querySelector('table');
 
 var idInterval;
-var isStarted = false;
+var isRun = false;
 var arrTimer = [0, 0, 0, 0];
 var numRows = 0;
 
@@ -22,7 +22,7 @@ btnReset.addEventListener('click', reset);
 function start() {
 	var beginDate = new Date();
 
-	if(!isStarted) {
+	if(!isRun) {
 		btnStart.style.display = 'none';
 		btnStop.style.display = 'inline-block';
 	} else {
@@ -35,7 +35,7 @@ function start() {
 		}
 	}
 	
-	isStarted = true;
+	isRun = true;
 
 	idInterval = setInterval(function() {
 		var delta,
@@ -95,6 +95,9 @@ function stop() {
 }
 
 function split() {
+
+	if(btnStart.style.display == 'inline-block'){return;}
+
 	var newRow = myTable.insertRow(-1);
 	var newCell;
 	numRows++;
@@ -122,7 +125,7 @@ function reset() {
     myTimer.innerHTML = '00:00:00';
 	btnStart.style.display = 'inline-block';
 	btnStop.style.display = 'none';
-	isStarted = false;
+	isRun = false;
 	arrTimer = [0, 0, 0, 0];
 	clearInterval(idInterval);
 	deleteRows();
